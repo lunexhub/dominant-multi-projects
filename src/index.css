@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Tactical Dark Theme */
+    --background: 120 5% 6%;
+    --foreground: 45 20% 95%;
+
+    --card: 120 5% 8%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 120 5% 8%;
+    --popover-foreground: 45 20% 95%;
+
+    /* Military Olive Green */
+    --primary: 82 35% 35%;
+    --primary-foreground: 45 20% 95%;
+
+    /* Gunmetal Gray */
+    --secondary: 120 3% 15%;
+    --secondary-foreground: 45 20% 90%;
+
+    /* Darker muted surfaces */
+    --muted: 120 3% 12%;
+    --muted-foreground: 45 10% 55%;
+
+    /* Military Gold Accent */
+    --accent: 42 65% 50%;
+    --accent-foreground: 120 5% 6%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 45 20% 95%;
+
+    --border: 120 5% 18%;
+    --input: 120 5% 15%;
+    --ring: 82 35% 40%;
+
+    --radius: 0.25rem;
+
+    /* Custom properties */
+    --gradient-tactical: linear-gradient(135deg, hsl(82 35% 25%) 0%, hsl(82 35% 35%) 50%, hsl(82 35% 30%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(120 5% 6%) 0%, hsl(120 5% 4%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 65% 45%) 0%, hsl(42 75% 55%) 100%);
+    --shadow-tactical: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 40px rgba(107, 142, 35, 0.2);
+
+    /* Light section theme */
+    --light-bg: 0 0% 98%;
+    --light-fg: 120 5% 10%;
+    --light-muted: 0 0% 92%;
+    --light-muted-fg: 120 5% 40%;
+    --light-card: 0 0% 100%;
+    --light-border: 120 5% 85%;
+
+    --sidebar-background: 120 5% 8%;
+    --sidebar-foreground: 45 20% 90%;
+    --sidebar-primary: 82 35% 35%;
+    --sidebar-primary-foreground: 45 20% 95%;
+    --sidebar-accent: 120 3% 15%;
+    --sidebar-accent-foreground: 45 20% 90%;
+    --sidebar-border: 120 5% 18%;
+    --sidebar-ring: 82 35% 40%;
+  }
+}
+
+/* Light section utility class */
+.section-light {
+  background-color: hsl(var(--light-bg));
+  color: hsl(var(--light-fg));
+}
+
+.section-light .text-foreground {
+  color: hsl(var(--light-fg));
+}
+
+.section-light .text-muted-foreground {
+  color: hsl(var(--light-muted-fg));
+}
+
+.section-light .bg-card {
+  background-color: hsl(var(--light-card));
+}
+
+.section-light .border-border\/50 {
+  border-color: hsl(var(--light-border) / 0.5);
+}
+
+.section-light .bg-muted\/30 {
+  background-color: hsl(var(--light-muted) / 0.3);
+}
+
+.section-light .stat-card {
+  background-color: hsl(var(--light-card) / 0.8);
+  border-color: hsl(var(--light-border) / 0.5);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-tactical-gradient {
+    background: var(--gradient-tactical);
+  }
+
+  .bg-dark-gradient {
+    background: var(--gradient-dark);
+  }
+
+  .shadow-tactical {
+    box-shadow: var(--shadow-tactical);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Camouflage pattern overlay */
+  .camo-pattern {
+    position: relative;
+  }
+
+  .camo-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse 80px 60px at 20% 30%, hsl(82 30% 20% / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 60px 80px at 70% 60%, hsl(82 25% 15% / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 100px 70px at 40% 80%, hsl(120 10% 12% / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 70px 90px at 80% 20%, hsl(82 20% 18% / 0.3) 0%, transparent 50%);
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .nav-link {
+    @apply relative text-foreground/80 hover:text-foreground transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .tactical-border {
+    @apply border border-primary/30 hover:border-primary/60 transition-colors duration-300;
+  }
+
+  .stat-card {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-glow;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideRight 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
