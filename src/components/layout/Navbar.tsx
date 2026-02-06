@@ -22,15 +22,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-tactical-gradient rounded flex items-center justify-center shadow-glow">
-              <Shield className="w-7 h-7 text-primary-foreground" />
+          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-tactical-gradient rounded flex items-center justify-center shadow-glow flex-shrink-0">
+              <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
             </div>
-            <div className="hidden sm:block">
-              <span className="font-display text-2xl tracking-wider text-foreground">
+            <div className="block">
+              <span className="font-display text-lg sm:text-2xl tracking-wider text-foreground">
                 DOMINANT
               </span>
-              <span className="block text-xs text-accent font-medium tracking-widest -mt-1">
+              <span className="block text-[10px] sm:text-xs text-accent font-medium tracking-widest -mt-0.5 sm:-mt-1">
                 MULTI PROJECTS
               </span>
             </div>

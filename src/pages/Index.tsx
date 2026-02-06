@@ -78,9 +78,9 @@ const Index = () => {
             </div>
             
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-[0.95] mb-4 sm:mb-6 [text-shadow:_3px_3px_25px_rgba(0,0,0,0.9)] break-words">
-              <span className="block text-gradient-gold drop-shadow-2xl">ELITE</span>
-              <span className="block text-gradient-gold drop-shadow-2xl">SECURITY</span>
-              <span className="block mt-1 sm:mt-2">FORCE</span>
+              <span className="block text-gradient-gold drop-shadow-2xl">DOMINANT</span>
+              <span className="block text-gradient-gold drop-shadow-2xl">MULTI</span>
+              <span className="block mt-1 sm:mt-2">PROJECTS</span>
             </h1>
             
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mb-6 sm:mb-8 leading-relaxed font-medium break-words">
