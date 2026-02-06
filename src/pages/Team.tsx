@@ -109,12 +109,12 @@ const Team = () => {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden max-w-full">
+        <div className="absolute inset-0 w-full">
           <img
             src={teamUnity}
             alt="Dominant Multi Projects Team"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover max-w-full"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/60" />
         </div>
@@ -173,8 +173,8 @@ const Team = () => {
 
       {/* Team Introduction */}
       <section className="py-24 camo-pattern">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-16 items-center">
             <div>
               <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
                 3,500+ Strong
@@ -201,17 +201,17 @@ const Team = () => {
               </div>
             </div>
             
-            <div className="relative">
-              <div className="aspect-[4/3] bg-card rounded overflow-hidden tactical-border">
+            <div className="relative w-full max-w-full">
+              <div className="aspect-[4/3] bg-card rounded overflow-hidden tactical-border w-full max-w-full">
                 <img
                   src={teamLineup}
                   alt="Security Team Lineup"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain md:object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground p-6 rounded shadow-tactical">
-                <div className="font-display text-3xl">24/7</div>
-                <div className="text-sm">Ready Response</div>
+              <div className="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 bg-accent text-accent-foreground p-4 md:p-6 rounded shadow-tactical max-w-[calc(100%-1rem)]">
+                <div className="font-display text-2xl md:text-3xl">24/7</div>
+                <div className="text-xs md:text-sm">Ready Response</div>
               </div>
             </div>
           </div>
@@ -220,7 +220,7 @@ const Team = () => {
 
       {/* Gallery Section - LIGHT */}
       <section className="py-24 section-light">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
               Our Operations
@@ -237,7 +237,7 @@ const Team = () => {
             {galleryImages.map((image, index) => (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded tactical-border ${
+                className={`group relative overflow-hidden rounded tactical-border w-full ${
                   index === 0 || index === 6 || index === 14 || index === 22 || index === 30 ? "col-span-2 row-span-2" : ""
                 }`}
               >
@@ -262,7 +262,7 @@ const Team = () => {
 
       {/* Divisions */}
       <section className="py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
               Specialized Units
@@ -274,11 +274,11 @@ const Team = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group">
-              <div className="aspect-video overflow-hidden rounded mb-6">
+              <div className="aspect-[4/3] md:aspect-video overflow-hidden rounded mb-6">
                 <img
                   src={teamSite}
                   alt="Field Operations Division"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain md:object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="font-display text-2xl text-foreground mb-3">Field Operations</h3>
@@ -288,11 +288,11 @@ const Team = () => {
             </div>
 
             <div className="group">
-              <div className="aspect-video overflow-hidden rounded mb-6">
+              <div className="aspect-[4/3] md:aspect-video overflow-hidden rounded mb-6">
                 <img
                   src={vipTeam}
                   alt="VIP Protection Division"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain md:object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="font-display text-2xl text-foreground mb-3">VIP Protection</h3>
@@ -302,11 +302,11 @@ const Team = () => {
             </div>
 
             <div className="group">
-              <div className="aspect-video overflow-hidden rounded mb-6">
+              <div className="aspect-[4/3] md:aspect-video overflow-hidden rounded mb-6">
                 <img
                   src={executiveTeam}
                   alt="Executive Services Division"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain md:object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <h3 className="font-display text-2xl text-foreground mb-3">Executive Services</h3>

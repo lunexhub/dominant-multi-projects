@@ -138,12 +138,12 @@ const Contact = () => {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden max-w-full">
+        <div className="absolute inset-0 w-full">
           <img
             src={heroImage}
             alt="Contact Dominant Multi Projects"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover max-w-full"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/60" />
         </div>
@@ -167,7 +167,7 @@ const Contact = () => {
       {/* Contact Section - LIGHT */}
       <section className="py-16 md:py-24 section-light">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
             {/* Contact Form */}
             <div>
               <h2 className="font-display text-3xl text-foreground mb-2">
@@ -316,7 +316,7 @@ const Contact = () => {
               </div>
               
               {/* Map */}
-              <div className="aspect-video bg-card border border-border/50 rounded overflow-hidden">
+              <div className="aspect-video bg-card border border-border/50 rounded overflow-hidden w-full max-w-full">
                 <iframe
                   src="https://www.google.com/maps/embed?q=600+Louis+Avenue,+Bramley,+Johannesburg,+South+Africa&zoom=15&maptype=roadmap"
                   width="100%"
@@ -336,7 +336,7 @@ const Contact = () => {
 
       {/* Emergency Contact */}
       <section className="py-16 bg-destructive/10 border-y border-destructive/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-destructive/20 rounded-full flex items-center justify-center animate-pulse-slow">
@@ -363,7 +363,7 @@ const Contact = () => {
 
       {/* FAQ Preview */}
       <section className="py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-display text-3xl text-foreground mb-4">

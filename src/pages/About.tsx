@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import MetaTags from "@/components/MetaTags";
 import heroImage from "@/assets/team-briefing.jpg";
-import vipImage from "@/assets/vip-protection.jpg";
+import executiveLimoImage from "@/assets/executive-limo-team.jpg";
+import founderImage from "@/assets/WhatsApp Image 2026-02-06 at 08.55.00.jpeg";
 
 const milestones = [
   { year: "2009", title: "Company Founded", description: "Established in Johannesburg with 50 personnel" },
@@ -67,12 +68,12 @@ const About = () => {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden max-w-full">
+        <div className="absolute inset-0 w-full">
           <img
             src={heroImage}
             alt="Dominant Multi Projects Team"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover max-w-full"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/60" />
         </div>
@@ -94,20 +95,20 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-16 md:py-24 camo-pattern">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div>
-              <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
+      <section className="py-16 md:py-24 camo-pattern overflow-x-hidden max-w-full w-full">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full w-full">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center max-w-full w-full">
+            <div className="w-full max-w-full">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-foreground mb-6 break-words">
                 BORN FROM MILITARY EXCELLENCE
               </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed break-words">
                 Dominant Multi Projects was founded by a group of former military officers who recognized the need for military-grade security in the private sector.
               </p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed break-words">
                 Our distinctive camouflage uniforms aren't just a choice—they're a statement. They represent our roots in military tradition and our commitment to tactical excellence in every operation we undertake.
               </p>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-muted-foreground mb-8 leading-relaxed break-words">
                 Today, we are proud to be the security partner of choice for South Africa's largest mining corporations, industrial facilities, and high-profile clients requiring discrete and effective protection.
               </p>
               
@@ -123,12 +124,12 @@ const About = () => {
               </div>
             </div>
             
-            <div className="relative">
-              <div className="aspect-[4/5] bg-card rounded overflow-hidden tactical-border">
+            <div className="relative w-full max-w-full">
+              <div className="aspect-[4/5] bg-card rounded overflow-hidden tactical-border w-full max-w-full">
                 <img
-                  src={vipImage}
-                  alt="VIP Protection Services"
-                  className="w-full h-full object-cover"
+                  src={executiveLimoImage}
+                  alt="Executive Limo Team"
+                  className="w-full h-full object-contain md:object-cover max-w-full"
                 />
               </div>
             </div>
@@ -138,7 +139,7 @@ const About = () => {
 
       {/* Values - LIGHT */}
       <section className="py-24 section-light">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
               Our Values
@@ -174,7 +175,7 @@ const About = () => {
 
       {/* Timeline */}
       <section className="py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
               Our Journey
@@ -214,7 +215,7 @@ const About = () => {
 
       {/* Leadership */}
       <section className="py-24 bg-card border-y border-border/50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
               Leadership
@@ -227,31 +228,32 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {leadership.map((leader, index) => (
-              <div
-                key={index}
-                className="bg-background border border-border/50 rounded p-6 text-center"
-              >
-                <div className="w-24 h-24 bg-primary/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users className="w-10 h-10 text-accent" />
-                </div>
-                <h3 className="font-display text-xl text-foreground mb-1">
-                  {leader.name}
+          {/* Founder & CEO */}
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-background border border-border/50 rounded-lg overflow-hidden">
+              <div className="aspect-[4/5] md:aspect-[3/4] w-full overflow-hidden">
+                <img
+                  src={founderImage}
+                  alt="Founder and CEO"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2">
+                  Founder & CEO
                 </h3>
-                <span className="text-accent text-sm block mb-4">{leader.role}</span>
-                <p className="text-muted-foreground text-sm">
-                  {leader.bio}
+                <p className="text-muted-foreground">
+                  Leading Dominant Multi Projects with decades of military and security expertise.
                 </p>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Certifications */}
       <section className="py-24">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-accent text-sm font-medium tracking-widest uppercase mb-4 block">
               Credentials
@@ -274,7 +276,7 @@ const About = () => {
 
       {/* CTA - LIGHT */}
       <section className="py-24 section-light">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
               PARTNER WITH THE BEST
